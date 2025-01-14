@@ -1,23 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+// import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
+  //   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   let activeStyle = {
     textDecoration: "underline",
   };
 
-  const handleLogout = () => {
-    logOut()
-      .then(() => {
-        navigate("/");
-      })
-      .then((err) => console.log(err));
-  };
+  //   const handleLogout = () => {
+  //     logOut()
+  //       .then(() => {
+  //         navigate("/");
+  //       })
+  //       .then((err) => console.log(err));
+  //   };
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -117,7 +117,7 @@ const Navbar = () => {
             </label>
           </li>
           <li>
-            {user?.uid ? (
+            {/* {user?.uid ? (
               <button
                 onClick={handleLogout}
                 className="btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl"
@@ -130,7 +130,7 @@ const Navbar = () => {
                   Login
                 </button>
               </Link>
-            )}
+            )} */}
           </li>
         </ul>
 
@@ -229,7 +229,7 @@ const Navbar = () => {
                         Completed Task
                       </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                       {user?.uid ? (
                         <button
                           onClick={handleLogout}
@@ -244,7 +244,7 @@ const Navbar = () => {
                           </button>
                         </Link>
                       )}
-                    </li>
+                    </li> */}
                   </ul>
                 </nav>
               </div>
